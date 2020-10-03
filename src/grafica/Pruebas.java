@@ -5,28 +5,20 @@
  */
 package grafica;
 
-import java.awt.BorderLayout;
-import java.awt.Graphics;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author Jose
  */
-public class NewJFrame extends javax.swing.JFrame {
-   
+public class Pruebas extends javax.swing.JFrame {
 
-    public NewJFrame() {
-        initComponents();        
-        this.setLocationRelativeTo(null);
-        this.panelGraphics2.setViewAreas(1, 2);
-        this.pruebas();
-        
-        
-    }
-    public void pruebas(){
+    /**
+     * Creates new form Pruebas
+     */
+    public Pruebas() {
+        initComponents();
         ArrayList<PointsXY> puntos = new ArrayList<>();
         DecimalFormat df = new DecimalFormat("#.##");
         for (float i = -10; i < 10; i = i+0.10f) {
@@ -38,8 +30,9 @@ public class NewJFrame extends javax.swing.JFrame {
         }
         
         
-        this.panelGraphics2.addFunction(puntos);
+        this.panelGraphics1.addFunction(puntos);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,30 +42,15 @@ public class NewJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PanelPrincipal = new javax.swing.JPanel();
-        panelGraphics2 = new grafica.PanelGraphics();
+        panelGraphics1 = new grafica.PanelGraphics();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(300, 300));
-        addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentResized(java.awt.event.ComponentEvent evt) {
-                formComponentResized(evt);
-            }
-        });
-
-        PanelPrincipal.setLayout(new java.awt.BorderLayout());
-        PanelPrincipal.add(panelGraphics2, java.awt.BorderLayout.CENTER);
-
-        getContentPane().add(PanelPrincipal, java.awt.BorderLayout.CENTER);
+        getContentPane().add(panelGraphics1, java.awt.BorderLayout.CENTER);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
-       
-    }//GEN-LAST:event_formComponentResized
-
-   
     /**
      * @param args the command line arguments
      */
@@ -90,26 +68,25 @@ public class NewJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pruebas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pruebas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pruebas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pruebas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewJFrame().setVisible(true);
+                new Pruebas().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel PanelPrincipal;
-    private grafica.PanelGraphics panelGraphics2;
+    private grafica.PanelGraphics panelGraphics1;
     // End of variables declaration//GEN-END:variables
 }
